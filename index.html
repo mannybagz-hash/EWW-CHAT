@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Private Cask Investment -- Elite Wine and Whisky</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--black:#0C0C0A;--soft:#111110;--dark:#141412;--border:#1E1E1C;--border2:#2A2A26;--gold:#C8A24D;--gold2:#F2CD26;--ivory:#F7F4EE;--stone:#9A9A94;--muted:#6A6A64;--deep:#3A3A36;--green:#4A9E5C;--green-bg:#0F1A0F;--green-bd:#2A4A2A}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--stone);font-family:Jost,sans-serif;font-weight:300;line-height:1.7;overflow-x:hidden}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(12,12,10,0.95);border-bottom:1px solid var(--border);padding:0 48px;height:60px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);text-decoration:none}
+.nav-cta{font-size:10px;letter-spacing:0.18em;text-transform:uppercase;background:var(--gold);color:var(--black);padding:9px 20px;font-weight:500;cursor:pointer;border:none;font-family:Jost,sans-serif}
+.nav-cta:hover{background:var(--gold2)}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:120px 80px 80px;position:relative;overflow:hidden;background:var(--black)}
+.hero-bg{position:absolute;inset:0;opacity:0.06}
+.hero-eyebrow{font-size:10px;letter-spacing:0.32em;text-transform:uppercase;color:var(--gold);margin-bottom:20px}
+.hero-headline{font-family:Cormorant Garamond,serif;font-size:clamp(48px,7vw,92px);font-weight:300;line-height:1.0;color:var(--ivory);max-width:700px}
+.hero-headline em{font-style:italic;color:var(--gold)}
+.hero-body{font-size:15px;line-height:1.85;max-width:480px;margin:24px 0 36px}
+.hero-actions{display:flex;gap:16px;flex-wrap:wrap}
+.btn-primary{background:var(--gold);color:var(--black);font-size:10px;letter-spacing:0.2em;text-transform:uppercase;font-weight:500;padding:16px 36px;border:none;cursor:pointer;font-family:Jost,sans-serif}
+.btn-primary:hover{background:var(--gold2)}
+.btn-ghost{background:transparent;color:var(--stone);font-size:10px;letter-spacing:0.2em;text-transform:uppercase;padding:16px 36px;border:1px solid var(--border2);cursor:pointer;font-family:Jost,sans-serif}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+section{padding:80px}
+.eyebrow{font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.sec-title{font-family:Cormorant Garamond,serif;font-size:clamp(28px,4vw,48px);font-weight:300;color:var(--ivory);line-height:1.15;margin-bottom:18px}
+.sec-title em{font-style:italic;color:var(--gold)}
+.sec-body{font-size:14px;line-height:1.85;max-width:540px}
+.how-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));border:1px solid var(--border2);margin-top:48px}
+.how-step{padding:32px;border-right:1px solid var(--border2)}
+.how-step:last-child{border-right:none}
+.step-num{font-family:Cormorant Garamond,serif;font-size:44px;font-weight:300;color:var(--border2);margin-bottom:14px}
+.step-title{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ivory);font-weight:500;margin-bottom:8px}
+.step-body{font-size:13px;line-height:1.75}
+.dark-section{background:var(--dark);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:80px}
+.pillars{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:36px;margin-top:48px}
+.pillar{display:flex;gap:16px}
+.pillar-icon{width:32px;height:32px;border:1px solid var(--border2);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.pillar-icon svg{width:14px;height:14px;stroke:var(--gold);fill:none;stroke-width:1.2}
+.pillar-head{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ivory);font-weight:500;margin-bottom:6px}
+.pillar-text{font-size:13px;line-height:1.75}
+.trust-bar{background:var(--dark);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:36px 80px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px}
+.trust-item{text-align:center}
+.trust-num{font-family:Cormorant Garamond,serif;font-size:30px;font-weight:300;color:var(--gold);display:block;margin-bottom:4px}
+.trust-lbl{font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--deep)}
+.chat-section{background:var(--black);padding:80px;border-top:1px solid var(--border)}
+.chat-intro{max-width:460px;margin-bottom:48px}
+.chat-shell{max-width:660px;border:1px solid var(--border2);overflow:hidden;display:flex;flex-direction:column;height:580px}
+.chat-top{background:#0a0a09;border-bottom:1px solid var(--border);padding:14px 18px;display:flex;align-items:center;gap:12px;flex-shrink:0}
+.avatar{width:38px;height:38px;border:1px solid var(--gold);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:500;color:var(--gold);flex-shrink:0}
+.adv-name{font-size:13px;color:var(--ivory);font-weight:500}
+.adv-role{font-size:10px;color:var(--gold);letter-spacing:0.1em;text-transform:uppercase;margin-top:1px}
+.status-wrap{margin-left:auto;display:flex;align-items:center;gap:5px}
+.sdot{width:6px;height:6px;border-radius:50%;background:var(--green)}
+.slbl{font-size:11px;color:var(--green)}
+.warm-badge{display:none;background:var(--green-bg);border:1px solid var(--green-bd);padding:3px 8px;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--green)}
+.warm-badge.show{display:block}
+.pgstrip{height:2px;background:var(--border);flex-shrink:0}
+.pgfill{height:100%;background:var(--gold);width:0%;transition:width 0.5s}
+.msgs{flex:1;overflow-y:auto;padding:18px;display:flex;flex-direction:column;gap:12px}
+.msgs::-webkit-scrollbar{width:3px}
+.msgs::-webkit-scrollbar-thumb{background:var(--border2)}
+.msg{display:flex;flex-direction:column;max-width:84%}
+.msg.j{align-self:flex-start}
+.msg.c{align-self:flex-end}
+.mlbl{font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--deep);margin-bottom:4px}
+.msg.c .mlbl{text-align:right}
+.bub{padding:11px 15px;font-size:13px;line-height:1.7}
+.msg.j .bub{background:#1a1a18;border-left:2px solid var(--gold);color:#c8c4bc}
+.msg.c .bub{background:var(--gold);color:var(--black);font-weight:500}
+.trow{display:flex;gap:4px;align-items:center;padding:11px 15px;background:#1a1a18;border-left:2px solid var(--gold)}
+.td{width:5px;height:5px;border-radius:50%;background:var(--gold);animation:blink 1.2s infinite}
+.td:nth-child(2){animation-delay:0.3s}
+.td:nth-child(3){animation-delay:0.6s}
+@keyframes blink{0%,80%,100%{opacity:0.25}40%{opacity:1}}
+.cbcard{background:var(--green-bg);border:1px solid var(--green-bd);border-left:2px solid var(--green);padding:16px 18px;margin-top:8px;display:none}
+.cbcard.open{display:block}
+.cblbl{font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--green);margin-bottom:6px}
+.cbbody{font-size:12px;line-height:1.7;color:#7a9a7a;margin-bottom:12px}
+.cbfields{display:flex;flex-direction:column;gap:6px}
+.cbinput{background:rgba(10,20,10,0.8);border:1px solid var(--green-bd);color:var(--ivory);font-size:12px;padding:8px 11px;font-family:Jost,sans-serif;outline:none}
+.cbinput:focus{border-color:var(--green)}
+.cbbtn{background:var(--green);border:none;color:var(--black);font-size:10px;letter-spacing:0.16em;text-transform:uppercase;font-weight:500;padding:9px;cursor:pointer;font-family:Jost,sans-serif}
+.cbsuccess{display:none;font-size:12px;color:var(--green);text-align:center;padding:8px 0}
+.qbar{padding:9px 13px;border-top:1px solid var(--border);display:flex;flex-wrap:wrap;gap:5px;flex-shrink:0}
+.qr{font-size:11px;padding:5px 11px;border:1px solid var(--border2);color:#8a8a84;background:transparent;cursor:pointer;letter-spacing:0.04em;font-family:Jost,sans-serif;transition:border-color 0.15s,color 0.15s}
+.qr:hover{border-color:var(--gold);color:var(--gold)}
+.irow{display:flex;border-top:1px solid var(--border);flex-shrink:0;background:#0a0a09}
+.cinput{flex:1;background:transparent;border:none;color:var(--ivory);font-size:13px;padding:13px 16px;font-family:Jost,sans-serif;outline:none}
+.cinput::placeholder{color:#3e3e3a}
+.csend{background:var(--gold);border:none;color:var(--black);font-size:10px;letter-spacing:0.16em;text-transform:uppercase;font-weight:500;padding:0 18px;cursor:pointer;font-family:Jost,sans-serif}
+.csend:hover{background:var(--gold2)}
+.csend:disabled{background:var(--border2);color:var(--muted);cursor:not-allowed}
+footer{background:#080808;border-top:1px solid var(--border);padding:40px 80px}
+.flogo{font-size:10px;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.frule{height:1px;background:var(--border);margin:20px 0}
+.fcomp{font-size:10px;line-height:1.8;color:var(--deep)}
+.reveal{opacity:1;transform:translateY(0);transition:opacity 0.7s,transform 0.7s}
+.reveal.visible{opacity:1;transform:translateY(0)}
+@media(max-width:768px){nav{padding:0 20px}.hero{padding:100px 24px 60px}section,.dark-section,.chat-section,.trust-bar,footer{padding:60px 24px}.how-grid{grid-template-columns:1fr}.how-step{border-right:none;border-bottom:1px solid var(--border2)}.pillars{grid-template-columns:1fr}.chat-shell{height:500px}.trust-bar{justify-content:center}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">Elite Wine &amp; Whisky</a>
+  <button class="nav-cta" onclick="document.getElementById('advisor').scrollIntoView({behavior:'smooth'})">Book a consultation</button>
+</nav>
+
+<section class="hero">
+  <svg class="hero-bg" viewBox="0 0 1400 900" xmlns="http://www.w3.org/2000/svg">
+    <line x1="700" y1="450" x2="0" y2="900" stroke="#c8a24d" stroke-width="0.5"/>
+    <line x1="700" y1="450" x2="1400" y2="900" stroke="#c8a24d" stroke-width="0.5"/>
+    <line x1="700" y1="450" x2="0" y2="0" stroke="#c8a24d" stroke-width="0.3"/>
+    <line x1="700" y1="450" x2="1400" y2="0" stroke="#c8a24d" stroke-width="0.3"/>
+    <ellipse cx="120" cy="600" rx="70" ry="45" stroke="#c8a24d" stroke-width="0.6" fill="none"/>
+    <line x1="50" y1="600" x2="190" y2="600" stroke="#c8a24d" stroke-width="0.4"/>
+    <ellipse cx="1280" cy="600" rx="70" ry="45" stroke="#c8a24d" stroke-width="0.6" fill="none"/>
+    <line x1="1210" y1="600" x2="1350" y2="600" stroke="#c8a24d" stroke-width="0.4"/>
+    <circle cx="700" cy="450" r="3" fill="#c8a24d" opacity="0.6"/>
+    <circle cx="700" cy="450" r="80" stroke="#c8a24d" stroke-width="0.2" fill="none" opacity="0.3"/>
+  </svg>
+  <div style="position:relative;z-index:1;">
+    <p class="hero-eyebrow">Private Client Services -- Elite Wine &amp; Whisky</p>
+    <h1 class="hero-headline">Rare.<br><em>Finite.</em><br>Quietly in<br>demand.</h1>
+    <p class="hero-body">A considered introduction to whisky cask ownership -- and why a growing number of private collectors are looking beyond conventional portfolios.</p>
+    <div class="hero-actions">
+      <button class="btn-primary" onclick="document.getElementById('advisor').scrollIntoView({behavior:'smooth'})">Speak with a cask specialist</button>
+      <button class="btn-ghost" onclick="document.getElementById('how').scrollIntoView({behavior:'smooth'})">How it works</button>
+    </div>
+  </div>
+</section>
+
+<section id="how" style="background:var(--soft);border-top:1px solid var(--border)">
+  <div class="reveal">
+    <p class="eyebrow">The mechanics</p>
+    <h2 class="sec-title">How cask ownership<br><em>actually works</em></h2>
+    <p class="sec-body">No fund units, no derivatives, no fractional shares. You take legal title to a physical cask, held under HMRC oversight in a bonded warehouse.</p>
+  </div>
+  <div class="how-grid reveal">
+    <div class="how-step"><div class="step-num">01</div><div class="step-title">Select and acquire</div><p class="step-body">Our team presents available casks suited to your budget and timeline. Legal title transfers to you on completion.</p></div>
+    <div class="how-step"><div class="step-num">02</div><div class="step-title">Storage and maturation</div><p class="step-body">Your cask rests in an HMRC-bonded warehouse, fully insured. As the spirit ages in oak it develops character and becomes progressively rarer.</p></div>
+    <div class="how-step"><div class="step-num">03</div><div class="step-title">Exit on your terms</div><p class="step-body">When the time is right -- typically 3 to 7 years -- choose your exit: private sale, trade auction, or bottling under your own label.</p></div>
+    <div class="how-step"><div class="step-num">04</div><div class="step-title">Ongoing support</div><p class="step-body">A dedicated adviser monitors your holding and keeps you informed on market developments and additional allocation opportunities.</p></div>
+  </div>
+</section>
+
+<div class="dark-section">
+  <div class="reveal">
+    <p class="eyebrow">Why casks</p>
+    <h2 class="sec-title">Why serious collectors<br><em>are paying attention</em></h2>
+  </div>
+  <div class="pillars reveal">
+    <div class="pillar"><div class="pillar-icon"><svg viewBox="0 0 16 16"><rect x="2" y="6" width="12" height="8" rx="1"/><path d="M5 6V4a3 3 0 016 0v2"/></svg></div><div><p class="pillar-head">Physical ownership</p><p class="pillar-text">A cask is a tangible asset with legal title. Its value is intrinsic to the liquid inside -- not sentiment about it.</p></div></div>
+    <div class="pillar"><div class="pillar-icon"><svg viewBox="0 0 16 16"><circle cx="8" cy="8" r="6"/><path d="M8 4v4l2.5 2.5"/></svg></div><div><p class="pillar-head">Time as a structural driver</p><p class="pillar-text">Maturation cannot be accelerated. The angel's share reduces volume annually while concentrating character and increasing rarity.</p></div></div>
+    <div class="pillar"><div class="pillar-icon"><svg viewBox="0 0 16 16"><path d="M2 12L6 8l3 2 5-7"/><path d="M11 5h3v3"/></svg></div><div><p class="pillar-head">Growing global demand</p><p class="pillar-text">Premium Scotch continues to expand in Asia, North America, and the Middle East. Aged stock has not grown in proportion.</p></div></div>
+    <div class="pillar"><div class="pillar-icon"><svg viewBox="0 0 16 16"><ellipse cx="8" cy="9" rx="6" ry="4"/><path d="M2 9v-2c0-2.2 2.7-4 6-4s6 1.8 6 4v2"/></svg></div><div><p class="pillar-head">Bonded warehouse security</p><p class="pillar-text">Held under HMRC supervision, independently of EW&amp;W. Fully insured. You hold the title.</p></div></div>
+    <div class="pillar"><div class="pillar-icon"><svg viewBox="0 0 16 16"><path d="M2 12L6 8l3 2 5-7"/></svg></div><div><p class="pillar-head">Portfolio diversification</p><p class="pillar-text">Whisky casks have historically shown low correlation with equities and property -- a structurally different risk profile.</p></div></div>
+    <div class="pillar"><div class="pillar-icon"><svg viewBox="0 0 16 16"><path d="M8 1l2 4h4l-3 3 1 4-4-2-4 2 1-4-3-3h4z"/></svg></div><div><p class="pillar-head">Exclusive allocation access</p><p class="pillar-text">EW&amp;W works with a limited client base. Allocation access to certain distilleries flows through private relationships.</p></div></div>
+  </div>
+</div>
+
+<div class="trust-bar reveal">
+  <div class="trust-item"><span class="trust-num">400+</span><span class="trust-lbl">Private clients</span></div>
+  <div class="trust-item"><span class="trust-num">40m+</span><span class="trust-lbl">Casks under management</span></div>
+  <div class="trust-item"><span class="trust-num">12+</span><span class="trust-lbl">Distillery partnerships</span></div>
+  <div class="trust-item"><span class="trust-num">HMRC</span><span class="trust-lbl">Bonded and insured</span></div>
+</div>
+
+<section id="advisor" class="chat-section">
+  <div class="chat-intro reveal">
+    <p class="eyebrow">Private client adviser</p>
+    <h2 class="sec-title">Speak with<br><em>James Hartley</em></h2>
+    <p style="font-size:14px;line-height:1.85;margin-top:14px;">James is available now to answer your questions and arrange a private consultation. No scripts. No pressure.</p>
+  </div>
+  <div class="chat-shell reveal">
+    <div class="chat-top">
+      <div class="avatar">JH</div>
+      <div><div class="adv-name">James Hartley</div><div class="adv-role">Private Client Adviser -- Rare Cask Division</div></div>
+      <div class="status-wrap"><div class="sdot"></div><div class="slbl">Available</div><div class="warm-badge" id="warmBadge">Ready to invest</div></div>
+    </div>
+    <div class="pgstrip"><div class="pgfill" id="pgFill"></div></div>
+    <div class="msgs" id="msgArea">
+      <div class="msg j">
+        <div class="mlbl">James Hartley -- EW&amp;W</div>
+        <div class="bub">Good afternoon. I am James, one of the private client advisers here at Elite Wine and Whisky.<br><br>There is no agenda to this conversation -- I simply want to make sure that if whisky cask ownership is something worth your attention, you leave with a clear and honest picture of how it works.<br><br>Where would you like to start?</div>
+      </div>
+    </div>
+    <div class="qbar" id="qBar">
+      <button class="qr" onclick="sendQ('Tell me how whisky cask investing works.')">How does it work?</button>
+      <button class="qr" onclick="sendQ('How much do I need to get started?')">Minimum to start?</button>
+      <button class="qr" onclick="sendQ('Is this a safe place to put money?')">Is it safe?</button>
+      <button class="qr" onclick="sendQ('Why whisky rather than stocks or property?')">Why whisky?</button>
+      <button class="qr" onclick="sendQ('What makes Elite Wine and Whisky different?')">Why EWW?</button>
+    </div>
+    <div class="irow">
+      <input class="cinput" id="cInput" placeholder="Ask James anything..." onkeydown="if(event.key==='Enter')doSend()"/>
+      <button class="csend" id="cSend" onclick="doSend()">Send</button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="flogo">Elite Wine &amp; Whisky</div>
+  <div class="frule"></div>
+  <p class="fcomp">Elite Wine and Whisky Limited is registered in England and Wales. The acquisition of whisky casks and fine wine is not regulated by the Financial Conduct Authority. Values can rise or fall. Past performance is not a reliable indicator of future performance. This page is for informational purposes only and does not constitute personal financial advice. Tax treatment depends on individual circumstances. Storage, insurance and management fees apply.</p>
+</footer>
+
+<script>
+const WORKER = 'https://eww-proxy.mannybagz.workers.dev';
+
+const SYSTEM = 'You are James Hartley, Private Client Adviser at Elite Wine and Whisky -- a premium rare whisky cask and fine wine firm based in the UK. You are having a live conversation with a prospective private client who has arrived at the EWW website. YOUR MISSION: Guide the conversation naturally through education, desire, and trust until the moment feels right to ask: Would you like to begin your investment journey? This should feel like a natural conclusion to a warm, intelligent conversation -- not a sales pitch. Once the client says yes, warmly confirm and tell them you will arrange everything. If they say no, acknowledge it graciously, keep the conversation open, and continue building trust. PERSONA: British, calm, authoritative, genuinely warm. Speaks like a trusted private wealth adviser. Never robotic, never pushy. Short elegant paragraphs -- conversational. Every sentence earns its place. KNOWLEDGE: Cask ownership means full legal title, HMRC-bonded warehouse storage, fully insured. Maturation means oak develops character, angel share is roughly 2 percent annually which reduces volume and increases rarity. Scotch exports were 6.2 billion pounds in 2023 reaching 166 global markets. Entry from roughly 5000 pounds for new-fill, 15000 to 40000 pounds plus for aged expressions. Exit options are private sale, trade auction, or private label bottling. Storage and insurance fees are modest at around 1 to 2 percent of cask value annually. No VAT while in bond. CGT depends on individual circumstances. Not FCA regulated -- state clearly if asked. EWW deliberately maintains a small curated client base. Typical holding period is 3 to 7 years. CONVERSATION FLOW: First educate and explain clearly how it works. Then build desire through scarcity, maturation, global demand. Then handle objections calmly and honestly. Then when the client seems genuinely interested and engaged, ask naturally: Would you like to begin your investment journey? JOURNEY TRIGGER: When you sense the client is warm and interested -- after they have asked good questions, shown curiosity, or expressed positive intent -- ask this exact question: Would you like to begin your investment journey? Ask it as a natural conclusion, not a sales close. AFTER YES: Say something warm like: Excellent. Let me take a few details so we can arrange your private consultation. Our team will be in touch shortly. AFTER NO: Say something gracious like: That is absolutely fine -- there is no rush at all. Feel free to keep asking questions and come back whenever the time feels right. OBJECTIONS: For safety acknowledge risk honestly, explain HMRC warehouse, insurance, physical asset, values can fall. For losing money be honest and explain structural supply demand dynamics. For why not stocks position as uncorrelated diversification not a replacement. For liquidity be honest that it is less liquid than equities with a 3 to 7 year horizon. For minimum say roughly 5000 pounds new-fill or 15000 to 40000 pounds plus for aged. For why now explain growing demand, finite stock, distillery access becoming more exclusive. For FCA say not regulated, be clear and honest. COMPLIANCE: Never promise returns. Never imply guaranteed appreciation. Say values can rise or fall. Say not personal financial advice if asked. Tax is individual. STYLE: 3 to 5 sentence replies. One natural follow up question per message. British English. No emoji. No bullet points. Sound like a real person.';
+let isWarm = false;
+let cbShown = false;
+let count = 0;
+const chatHistory = [];
+
+// All sections visible by default
+
+function setProgress(p){ document.getElementById('pgFill').style.width=p+'%'; }
+function scrollDown(){ const m=document.getElementById('msgArea'); m.scrollTop=m.scrollHeight; }
+
+function addMsg(role, html){
+  const area=document.getElementById('msgArea');
+  const wrap=document.createElement('div'); wrap.className='msg '+role;
+  const lbl=document.createElement('div'); lbl.className='mlbl';
+  lbl.textContent=role==='j'?'James Hartley -- EW&W':'You';
+  const bub=document.createElement('div'); bub.className='bub';
+  bub.innerHTML=html;
+  wrap.appendChild(lbl); wrap.appendChild(bub);
+  area.appendChild(wrap); scrollDown();
+}
+
+function showTyping(){
+  const area=document.getElementById('msgArea');
+  const el=document.createElement('div'); el.id='typer'; el.className='msg j';
+  el.innerHTML='<div class="mlbl">James Hartley -- EW&W</div><div class="trow"><div class="td"></div><div class="td"></div><div class="td"></div></div>';
+  area.appendChild(el); scrollDown();
+}
+function removeTyping(){ const t=document.getElementById('typer'); if(t)t.remove(); }
+
+function showCallbackCard(){
+  if(cbShown)return; cbShown=true;
+  document.getElementById('warmBadge').classList.add('show');
+  setProgress(90);
+  var area=document.getElementById('msgArea');
+  var el=document.createElement('div'); el.className='msg j';
+  el.innerHTML='<div class="mlbl">James Hartley -- EW&W</div>'
+    +'<div class="bub">Excellent -- I am delighted to hear that. Let me take a few details so we can arrange your private consultation. A member of our team will be in touch within one business day.</div>'
+    +'<div class="cbcard open">'
+    +'<div class="cblbl">Begin your investment journey</div>'
+    +'<div class="cbbody">Please leave your details below. Your information is kept strictly private and will only be used to arrange your consultation.</div>'
+    +'<div class="cbfields" id="cbFields">'
+    +'<input class="cbinput" id="cbName" placeholder="Full name"/>'
+    +'<input class="cbinput" id="cbEmail" placeholder="Email address"/>'
+    +'<input class="cbinput" id="cbPhone" placeholder="Phone number"/>'
+    +'<input class="cbinput" id="cbBudget" placeholder="Approximate budget e.g. 5000 to 10000 pounds"/>'
+    +'<input class="cbinput" id="cbTime" placeholder="Preferred callback time e.g. Tuesday afternoon"/>'
+    +'<button class="cbbtn" onclick="submitCb()">Submit and begin</button>'
+    +'</div>'
+    +'<div class="cbsuccess" id="cbOk">Thank you. A member of the EWW private client team will be in touch with you shortly.</div>'
+    +'</div>';
+  area.appendChild(el); scrollDown();
+}
+
+function submitCb(){
+  var name=document.getElementById('cbName').value.trim();
+  var email=document.getElementById('cbEmail').value.trim();
+  var phone=document.getElementById('cbPhone').value.trim();
+  var budget=document.getElementById('cbBudget').value.trim();
+  var time=document.getElementById('cbTime').value.trim();
+  if(!name||!phone){
+    alert('Please enter your name and phone number.');
+    return;
+  }
+
+  // Build conversation summary for the closer
+  var transcript = chatHistory.map(function(m){
+    return (m.role === 'user' ? 'CLIENT: ' : 'JAMES: ') + m.content;
+  }).join(' | ');
+
+  // Submit to Formspree as JSON
+  var payload = {
+    _subject: 'New Warm Lead - ' + name + ' - EWW',
+    name: name,
+    email: email || 'Not provided',
+    phone: phone,
+    budget: budget || 'Not provided',
+    callback_time: time || 'Not provided',
+    lead_status: 'WARM - Ready to invest',
+    source: 'EWW Landing Page - James Hartley Chat',
+    conversation: transcript
+  };
+
+  // Build clean lead snapshot for closer
+  var leadSnapshot = 'NAME: ' + name
+    + '\nEMAIL: ' + (email||'Not provided')
+    + '\nPHONE: ' + phone
+    + '\nBUDGET: ' + (budget||'Not provided')
+    + '\nCALLBACK: ' + (time||'Not provided')
+    + '\nSTATUS: WARM - Ready to invest'
+    + '\nSOURCE: EWW Landing Page - James Hartley Chat'
+    + '\n\n--- CONVERSATION TRANSCRIPT ---\n' + transcript;
+
+  fetch(WORKER+'/lead', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({
+      name: name,
+      email: email || 'Not provided',
+      phone: phone,
+      budget: budget || 'Not provided',
+      callback_time: time || 'Not provided',
+      transcript: transcript
+    })
+  }).then(function(r){ return r.json(); })
+  .then(function(data){
+    if(data.success){
+      console.log('Lead emailed successfully');
+    } else {
+      console.log('Lead error:', JSON.stringify(data));
+    }
+  }).catch(function(e){
+    console.log('Lead submit error:', e.message);
+  });
+
+  document.getElementById('cbFields').style.display='none';
+  document.getElementById('cbOk').style.display='block';
+  setProgress(100);
+  setTimeout(function(){
+    addMsg('j','Excellent -- I have everything I need, '+name+'. A member of our private client team will be in touch at the number you have provided. In the meantime, please do not hesitate to ask if anything else comes to mind.');
+  },700);
+}
+
+async function callClaude(text){
+  chatHistory.push({role:'user',content:text});
+  var res = await fetch(WORKER+'/chat',{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({
+      model:'claude-sonnet-4-5',
+      max_tokens:1000,
+      system:SYSTEM,
+      messages:chatHistory
+    })
+  });
+  if(!res.ok){
+    var err=await res.json().catch(function(){return {};});
+    chatHistory.pop();
+    throw new Error((err.error&&err.error.message)||'Error '+res.status);
+  }
+  var data=await res.json();
+  var reply=data.content&&data.content[0]&&data.content[0].text||'My apologies -- there seems to be a brief connection issue.';
+  chatHistory.push({role:'assistant',content:reply});
+  return reply;
+}
+
+function showYesNo(){
+  var qbar = document.getElementById('qBar');
+  qbar.style.display = 'flex';
+  var btnYes = document.createElement('button');
+  btnYes.className = 'qr';
+  btnYes.textContent = 'Yes, let us do it';
+  btnYes.style.borderColor = 'var(--green)';
+  btnYes.style.color = 'var(--green)';
+  btnYes.onclick = function(){ sendQ('Yes, I would like to begin my investment journey.'); };
+  var btnNo = document.createElement('button');
+  btnNo.className = 'qr';
+  btnNo.textContent = 'Not right now';
+  btnNo.onclick = function(){ sendQ('No thank you, not right now.'); };
+  var lbl = document.createElement('span');
+  lbl.textContent = 'Your answer:';
+  lbl.style.cssText = 'font-size:11px;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;align-self:center;margin-right:8px;';
+  qbar.innerHTML = '';
+  qbar.appendChild(lbl);
+  qbar.appendChild(btnYes);
+  qbar.appendChild(btnNo);
+}
+
+async function doSend(){
+  const inp=document.getElementById('cInput');
+  const btn=document.getElementById('cSend');
+  const text=inp.value.trim();
+  if(!text||btn.disabled)return;
+  inp.value=''; btn.disabled=true;
+  document.getElementById('qBar').style.display='none';
+  addMsg('c',text.replace(/</g,'&lt;').replace(/>/g,'&gt;'));
+  count++;
+  const lowerText = text.toLowerCase().trim();
+  const isYes = lowerText === 'yes' || lowerText === 'yes please' || lowerText === 'yes i would' || lowerText === 'absolutely' || lowerText === 'definitely' || lowerText === 'sure' || lowerText === 'i would' || lowerText === 'lets do it' || lowerText === "let's do it" || lowerText === 'ok' || lowerText === 'okay';
+  const isNo = lowerText === 'no' || lowerText === 'not yet' || lowerText === 'not right now' || lowerText === 'no thank you' || lowerText === 'no thanks' || lowerText === 'not at the moment';
+  setProgress(isYes ? 90 : Math.min(20+count*8,65));
+  showTyping();
+  try{
+    const reply=await callClaude(text);
+    removeTyping();
+    addMsg('j',reply.split('\n').join('<br>'));
+    if(isYes && !cbShown) setTimeout(showCallbackCard, 600);
+    // Show yes/no buttons if James asked the journey question
+    if(reply.toLowerCase().indexOf('begin your investment journey') !== -1 && !isWarm){
+      isWarm = true;
+      setProgress(72);
+      showYesNo();
+    }
+  }catch(e){
+    removeTyping();
+    addMsg('j','My apologies -- there seems to be a brief connection issue. Please try again in a moment.');
+    console.error('Error:',e.message);
+  }
+  btn.disabled=false; inp.focus();
+}
+
+function sendQ(t){document.getElementById('cInput').value=t;doSend();}
+</script>
+</body>
+</html>
